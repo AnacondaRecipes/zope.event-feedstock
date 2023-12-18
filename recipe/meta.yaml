@@ -30,13 +30,18 @@ test:
     - zope.event
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest -vv --pyargs zope.event.tests
 
 about:
   home: https://github.com/zopefoundation/zope.event
   license: ZPL-2.1
   license_family: OTHER
+  license_file:
+    - LICENSE.txt
+    - COPYRIGHT.txt
   summary: Event publishing / dispatch, used by Zope Component Architecture
   description: |
     This package provides a simple event system on which application-specific
