@@ -21,7 +21,7 @@ requirements:
     - wheel
   run:
     - python
-    # https://github.com/zopefoundation/zope.event/blob/5.0/setup.py#L69
+    # https://github.com/zopefoundation/zope.event/blob/5.0/setup.py#L70
     - setuptools
 
 test:
