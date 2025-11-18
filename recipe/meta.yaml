@@ -1,23 +1,24 @@
 {% set name = "zope.event" %}
-{% set version = "5.0" %}
+{% set version = "6.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bac440d8d9891b4068e2b5a2c5e2c9765a9df762944bda6955f96bb9b91e67cd
+  url: https://pypi.org/packages/source/z/zope.event/zope_event-6.1.tar.gz
+  sha256: 6052a3e0cb8565d3d4ef1a3a7809336ac519bc4fe38398cb8d466db09adef4f0
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true  # [py<310]
 
 requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=78.1.1,<81
     - wheel
   run:
     - python
@@ -51,7 +52,6 @@ about:
     Class-based event handlers.
   doc_url: https://zopeevent.readthedocs.io/
   dev_url: https://github.com/zopefoundation/zope.event
-
 
 extra:
   recipe-maintainers:
